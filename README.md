@@ -1,4 +1,6 @@
-# OpenAI API Quickstart - Node.js example app
+# Open AI Startup Name Generator
+
+![Open AI Startup Name Generator Screenshot](https://github.com/alisolanki/openai-startup-name-generator/blob/master/ss.png)
 
 This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
 
