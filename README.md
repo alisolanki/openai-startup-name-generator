@@ -4,7 +4,12 @@
 
 [![Open AI Startup Name Generator Screenshot](https://github.com/alisolanki/openai-startup-name-generator/blob/master/ss.png)](https://youtu.be/3K1a4quAD7w)
 
-This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
+### Share
+- Share your project by mentioning me on:
+  - Twitter (https://twitter.com/alisolankii)
+  - LinkedIn (https://linkedin.com/in/alisolanki)
+  - Instagram (https://instagram.com/alisolankii)
+- I'll repost 🍉
 
 ## Setup
 
