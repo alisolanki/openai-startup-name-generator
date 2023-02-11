@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
+        <title>Startup Name Generator | OpenAI</title>
         <link rel="icon" href="/shuttle.png" />
       </Head>
 
@@ -34,13 +34,22 @@ export default function Home() {
           <input
             type="text"
             name="startup"
-            placeholder="Enter an startup"
+            placeholder="Enter a startup domain"
             value={startupInput}
             onChange={(e) => setStartupInput(e.target.value)}
           />
           <input type="submit" value="Generate names" />
         </form>
         <div className={styles.result}>{result}</div>
+        <iframe
+          width="336"
+          height="189"
+          src="https://www.youtube.com/embed/3K1a4quAD7w"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </main>
       <footer className={styles.footer}>
         Made by <a href="https://alisolanki.com">Ali Solanki</a>
