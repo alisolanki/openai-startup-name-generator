@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 
 export default function Home() {
   const [startupInput, setStartupInput] = useState("");
+  const [openaiApiKey, setOpenaiApiKey] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -13,7 +14,10 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ startup: startupInput }),
+      body: JSON.stringify({
+        startup: startupInput,
+        openaiApiKey: openaiApiKey,
+      }),
     });
     const data = await response.json();
     setResult(data.result);
@@ -37,6 +41,14 @@ export default function Home() {
             placeholder="Enter a startup domain"
             value={startupInput}
             onChange={(e) => setStartupInput(e.target.value)}
+          />
+          {/* Remove the below input tag to use your own OpenAI API key */}
+          <input
+            type="text"
+            name="openai-api-key"
+            placeholder="Enter your OpenAI API key (Keep it blank if added it in .env)"
+            value={openaiApiKey}
+            onChange={(e) => setOpenaiApiKey(e.target.value)}
           />
           <input type="submit" value="Generate names" />
         </form>

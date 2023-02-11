@@ -6,6 +6,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+  if (req.body.openaiApiKey) {
+    configuration.apiKey = req.body.openaiApiKey;
+    console.log(configuration.apiKey);
+    return;
+  }
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt(req.body.startup),
