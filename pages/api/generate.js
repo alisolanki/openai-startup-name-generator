@@ -1,9 +1,8 @@
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAI } from "openai";
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
   if (req.body.openaiApiKey) {
@@ -11,12 +10,13 @@ export default async function (req, res) {
     console.log(configuration.apiKey);
     return;
   }
-  const completion = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: generatePrompt(req.body.startup),
+  const completion = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: 'user', content: generatePrompt(req.body.startup) }],
     temperature: 0.6,
   });
-  res.status(200).json({ result: completion.data.choices[0].text });
+  console.log(completion.choices[0].message.content);
+  res.status(200).json({ result: completion.choices[0].message.content });
 }
 
 function generatePrompt(startup) {
@@ -26,7 +26,7 @@ function generatePrompt(startup) {
   
   Domain: Payment gateway
   Names: Zoomer Pay, Slay Pay, No Cap Payment
-  Domain: Clothing
+  Domain: Clothing brands
   Names: Drip Check, Bussin Wear, Boujee Clothes 
   Domain: ${capitalizedStartup}
   Names:`;
